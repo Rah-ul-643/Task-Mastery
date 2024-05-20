@@ -1,0 +1,210 @@
+
+.title {
+    text-align: center;
+    margin: 2rem;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    /* Text color */
+    font-size: 3em;
+    /* Adjust font size as needed */
+    font-weight: bold;
+    /* Adjust font weight as needed */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* Text shadow for contrast */
+}
+
+.container {
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    padding: 3rem;
+}
+
+
+.board-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.task-cards-container {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 8px;
+    width: 50%;
+    min-height: 300px;
+    box-shadow: -10px 10px 20px 2px rgb(0, 0, 0, 1);
+
+}
+
+@media (max-width: 768px) {
+    .task-cards-container {
+        display: none;
+    }
+}
+
+.task-item {
+    width: 80%;
+    min-height: 86px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 8px;
+    box-shadow: 0 0 20px 10px rgb(0, 0, 0, 1);
+    padding: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: transform 0.2s ease-in;
+}
+
+.task-item:hover {
+    transform: scale(1.01);
+}
+
+.reverse-flex {
+    flex-direction: row-reverse;
+}
+
+
+.card {
+    border-radius: 32px;
+    padding: 1.5rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 300px;
+    min-height: 300px;
+    width: 90%;
+    transition: transform 0.2s;
+    box-shadow: 0 5px 20px 10px rgb(0, 0, 0, 1);
+}
+
+@media (min-width: 768px) {
+    .card {
+        width: 30%;
+    }
+}
+
+@media (min-width: 481px) and (max-width:768px) {
+    .card {
+        width: 300px;
+    }
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-left {
+    align-self: flex-start;
+    /* animation: fadeInLeft 1s ease-in-out; */
+}
+
+
+.card-right {
+    align-self: flex-end;
+}
+
+.card-0 {
+    background-color: #f8bbd0;
+}
+
+.card-1 {
+    background-color: #b3e5fc;
+}
+
+.card-2 {
+    background-color: #fae34c;
+
+}
+
+.card-3 {
+    background-color: #ffe0b2;
+}
+
+.card-4 {
+    background-color: #d1c4e9;
+}
+
+.card h3 {
+    margin: 16px;
+    color: #000000;
+    font-size: 2rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    border: black solid 4px;
+    border-radius: 16px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.card p {
+    margin: 16px;
+    font-size: 1.2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #272726;
+    text-align: center;
+}
+
+.create-task-btn {
+    position: fixed;
+    bottom: 84px;
+    right: 36px;
+    height: 60px;
+    width: 60px;
+    font-size: 3rem;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    border: solid 3px rgb(56, 238, 245);
+    box-shadow: 0 0 20px 2px rgba(56, 238, 245, 1);
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.create-task-btn:hover {
+    transform: rotate(90deg) scale(1.05);
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-container button {
+    border: none;
+    font-size: 1.8rem;
+    padding: 8px;
+    margin: 8px 48px;
+    border-radius: 16px;
+    background-color: transparent;
+    color: #000000;
+    transition: background-color 0.3s ease, box-shadow 0.5s ease;
+    cursor: pointer;
+}
+
+.btn-container button:hover {
+    box-shadow: 0 0 20px 2px rgb(0, 0, 0, 1);
+    background-color: white;
+}

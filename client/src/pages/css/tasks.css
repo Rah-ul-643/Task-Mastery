@@ -1,0 +1,136 @@
+
+.title{
+    text-align: center;
+    margin: 2rem;
+    font-size: 3rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.task-container {
+    border-radius: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 3rem;
+}
+
+.task-card {
+    background-color: #fff;
+    border-radius: 32px;
+    padding: 1.5rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+    min-height: 300px;
+    transition: transform 0.2s;
+    box-shadow: -10px 10px 20px 2px rgb(0, 0, 0, 1);
+}
+
+@media  (min-width: 768px ){
+    .task-card{
+        width: 400px;
+    }
+}
+
+@media  (min-width: 481px) and (max-width:768px){
+    .task-card{
+        width: 300px;
+    }
+}
+
+.task-card:hover {
+    transform: scale(1.05);
+}
+
+
+.card-0 {
+    background-color: #f8bbd0;
+}
+
+.card-1 {
+    background-color: #b3e5fc;
+}
+
+.card-2 {
+    background-color: #fae34c;
+
+}
+
+.card-3 {
+    background-color: #ffe0b2;
+}
+
+.card-4 {
+    background-color: #d1c4e9;
+}
+
+.task-card h3 {
+    margin: 16px;
+    color: #a600ff;
+    font-size: 2.5rem;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.task-card p {
+    margin: 16px;
+    font-size: 1.2rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #272726;
+    text-align: center;
+}
+
+.task-priority{
+    text-align: center;
+}
+
+.task-card p span{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.create-task-btn{
+    position: fixed;
+    bottom: 84px;
+    right: 36px;
+    height: 60px;
+    width: 60px;
+    font-size: 3rem;
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    border: solid 3px rgb(56, 238, 245) ;
+    box-shadow: 0 0 20px 2px  rgba(56, 238, 245, 1);
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.create-task-btn:hover{
+    transform: rotate(90deg) scale(1.05);
+}
+
+.btn-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-container button{
+    border: none;
+    font-size: 1.8rem;
+    padding: 8px;
+    margin: 8px 48px;
+    border-radius: 16px;
+    background-color: transparent;
+    color: #000000;
+    transition: background-color 0.3s ease, box-shadow 0.5s ease;
+}
+
+.btn-container button:hover{
+    box-shadow: 0 0 20px 2px  rgb(0, 0, 0 ,1);
+    background-color: white;
+}
+
+

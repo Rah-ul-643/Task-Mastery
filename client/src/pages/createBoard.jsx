@@ -18,11 +18,11 @@ const CreateBoard = ({ boards, setBoards }) => {
 
         try {
             const email= JSON.parse(localStorage.getItem('user')).email;
-            const response = await axios.post('boards/new',{email , newBoard: { id, title, description } });
+            const response = await axios.post('boards/new',{email , newBoard: { id, title, description, tasks:[] } });
             console.log(response.data);
 
             if (response.data.success) {
-                const newBoards = [...boards,{ id, title, description }]
+                const newBoards = [...boards,{ id, title, description, tasks:[] }]
                 setBoards(newBoards);
                 toast.success("New Board Created");
                 navigate(`/boards`);

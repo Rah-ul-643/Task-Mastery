@@ -2,6 +2,7 @@ const router = require('express').Router();
 const bcrypt= require('bcrypt');
 
 const userModel = require('../models/users');
+const taskModel = require('../models/tasks');
 const { getRecords,createNewRecord } = require('../controllers/dbController');
 
 router.post('/login', async (req, res) => {
@@ -37,6 +38,7 @@ router.post('/register', async (req, res) => {
             console.log(newUser);
 
             await createNewRecord(userModel,newUser);
+            await createNewRecord(taskModel,{email:email,boards:[]});
             console.log("New user created.");
 
             res.json({ success: true, message: "Registered successfully" });

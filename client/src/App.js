@@ -23,7 +23,7 @@ function App() {
   const [boards,setBoards] = useState([]);
 
   useEffect(() => {
-    console.log("useeffect called");
+  
     const makeRequest = async () => {
       try {
         const params = { email: JSON.parse(localStorage.getItem('user')).email };

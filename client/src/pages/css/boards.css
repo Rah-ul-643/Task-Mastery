@@ -16,13 +16,9 @@
     transform: translate(-50%, -50%);
     text-align: center;
     color: #fff;
-    /* Text color */
     font-size: 3em;
-    /* Adjust font size as needed */
     font-weight: bold;
-    /* Adjust font weight as needed */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    /* Text shadow for contrast */
 }
 
 .container {
@@ -118,7 +114,6 @@
 
 .card-left {
     align-self: flex-start;
-    /* animation: fadeInLeft 1s ease-in-out; */
 }
 
 

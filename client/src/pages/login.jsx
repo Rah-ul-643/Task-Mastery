@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './css/login.css';
 import axios from '../apis';
+import toast from 'react-hot-toast';
 
 const Login = ({setIsLoggedIn}) => {
 
@@ -12,6 +13,7 @@ const Login = ({setIsLoggedIn}) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const toastId = toast.loading("Logging In");
 
         try {
             const response = await axios.post('/login', {
@@ -24,18 +26,23 @@ const Login = ({setIsLoggedIn}) => {
                 const user = response.data.user;
                 localStorage.setItem('user', JSON.stringify(user));
                 setIsLoggedIn(true);
+                toast.success("Successfully logged in");
+                navigate('/');
                 
             } else {
                 console.log(response.data.message);
+                toast.error(response.data.message);
                 navigate('/login')                          // api sends an object {user, success, message}
             }
 
         } catch (error) {
             console.log("Login Error", error);
+            toast.error(`Oops! Server Issue :( \n Lemme fix it in a minute...`)
         }
         finally {
             setPassword('');
             setEmail('');
+            toast.dismiss(toastId);
         }
     };
 

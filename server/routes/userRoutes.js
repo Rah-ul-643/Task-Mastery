@@ -39,7 +39,7 @@ router.post('/register', async (req, res) => {
             await createNewRecord(userModel,newUser);
             console.log("New user created.");
 
-            res.json({ success: true, message: "New user created" });
+            res.json({ success: true, message: "Registered successfully" });
         }
         else {
             res.json({ success: false, message: "Email already in use" });

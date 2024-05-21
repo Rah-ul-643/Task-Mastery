@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './css/boards.css';
 import axios from '../apis';
 import Missing from '../components/Missing';
+import toast from 'react-hot-toast';
+
 
 const Boards = ({ boards, setBoards }) => {
     const navigate = useNavigate();
@@ -16,9 +18,11 @@ const Boards = ({ boards, setBoards }) => {
 
             const newBoards = boards.filter((board) => board.id !== id);
             setBoards(newBoards);
+            toast.success("Board deleted.");
 
         } catch (error) {
             console.log("Delete Error: ", error);
+            toast.error(`Oops! Server Issue :( \n Lemme fix it in a minute...`);
         }
 
     }
@@ -91,7 +95,6 @@ const Boards = ({ boards, setBoards }) => {
                 text={"Boards"}
                 CreateBtn={<button className='create-task-btn' onClick={() => navigate('/boards/new')} > + </button>}
             />
-
 
     )
 }

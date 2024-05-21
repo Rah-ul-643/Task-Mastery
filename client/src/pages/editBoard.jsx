@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './css/create.css';
 import axios from '../apis';
 import { useNavigate, useParams } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 
 const EditBoard = ({ boards, setBoards }) => {
@@ -38,11 +39,13 @@ const EditBoard = ({ boards, setBoards }) => {
                 setBoards(newBoards);
 
                 navigate(`/boards`);
+                toast.success("Updated Board.");
             }
-            else console.log(response.data.message);
+            else toast.error(response.data.message);
 
         } catch (error) {
             console.log(error);
+            toast.error(`Oops! Server Issue :( \n Lemme fix it in a minute...`)
         }
     };
 

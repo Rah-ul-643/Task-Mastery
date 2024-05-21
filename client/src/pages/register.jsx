@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 
 import axios from '../apis';
 import './css/register.css';
+import toast from 'react-hot-toast';
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -16,8 +17,10 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      if (password === password2) {
+
+    if (password === password2) {
+      const toastId = toast.loading('Registering User...');
+      try {
         const response = await axios.post('/register', {
           name,
           email,
@@ -25,22 +28,32 @@ const Register = () => {
         });
 
         console.log(response.data);
-        response.data.success ? navigate('/login') : navigate('/register')  // api sends an object {success,message}
-        // display messages using toast...
+
+        if (response.data.success) {                   // api sends an object {success,message}
+          toast.success(response.data.message);
+          navigate('/login');
+
+        } else {
+          toast.error(response.data.message);
+        }
+
+
+
+      } catch (error) {
+        console.log("signup Error", error);
+        toast.error(`Oops! Server Issue :( \n Lemme fix it in a minute...`);
 
       }
-      else {
-        console.log('Password does not match');
+      finally {
+        setName('');
+        setPassword('');
+        setEmail('');
+        setPassword2('');
+        toast.dismiss(toastId);
       }
-
-    } catch (error) {
-      console.log("Login Error", error);
     }
-    finally {
-      setName('');
-      setPassword('');
-      setEmail('');
-      setPassword2('');
+    else {
+      toast.error("Password does not match");
     }
   };
 

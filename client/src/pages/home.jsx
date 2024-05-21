@@ -2,7 +2,7 @@ import React from 'react'
 import './css/home.css';
 import { Link } from 'react-router-dom';
 
-const Home = () => {
+const Home = ({isLoggedIn}) => {
   return (
     <div className=" Home home-container">
       <div className="hero-section">
@@ -10,7 +10,11 @@ const Home = () => {
         <p className="hero-description">
           Master your tasks with efficiency and ease. Join us and boost your productivity today!
         </p>
-        <Link to={'/boards'}><button className="hero-button">Get Started</button></Link>
+        <Link to={'/boards'}>
+          <button className="hero-button">
+            {isLoggedIn ? "View My Boards" : "Get Started" }
+          </button>
+        </Link>
       </div>
       <div className="features-section">
         <h2 className="section-title">Features</h2>

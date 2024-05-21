@@ -23,7 +23,7 @@ function App() {
   const [boards,setBoards] = useState([]);
 
   useEffect(() => {
-
+    console.log("useeffect called");
     const makeRequest = async () => {
       try {
         const params = { email: JSON.parse(localStorage.getItem('user')).email };
@@ -36,6 +36,7 @@ function App() {
 
       } catch (error) {
         console.log(error);
+        setBoards([]);
       }
     }
 
@@ -52,7 +53,7 @@ function App() {
       />
 
       <Routes>
-        <Route path='/' element={<Home/>} />
+        <Route path='/' element={<Home isLoggedIn={isLoggedIn} />} />
         <Route path='/boards' element={isLoggedIn ? <Boards boards={boards} setBoards={setBoards}/> : <Login setIsLoggedIn={setIsLoggedIn}/>} />
         <Route path='/tasks/:id' element={isLoggedIn ? <Tasks boards={boards} setBoards={setBoards}/> : <Login setIsLoggedIn={setIsLoggedIn}/>} />
         <Route path='/login' element={isLoggedIn ? <Home /> : <Login setIsLoggedIn={setIsLoggedIn}/>} />

@@ -1,15 +1,19 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './css/Nav.css';
+import toast from 'react-hot-toast';
 
 const Nav = ({ isLoggedIn, setIsLoggedIn }) => {
 
+  const navigate= useNavigate();
 
   const handleLogOut = () => {
     setIsLoggedIn(false);
     localStorage.removeItem('user');
+    toast.success("Logged out successfully!");
+    navigate('/');
   }
 
   return (

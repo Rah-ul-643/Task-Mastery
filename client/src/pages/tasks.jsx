@@ -4,6 +4,7 @@ import './css/tasks.css';
 import axios from '../apis';
 import { useState, useEffect } from 'react';
 import Missing from '../components/Missing';
+import toast from 'react-hot-toast';
 
 const Tasks = ({ boards, setBoards }) => {
     const navigate = useNavigate();
@@ -37,11 +38,12 @@ const Tasks = ({ boards, setBoards }) => {
                 setBoard(updatedBoard)
                 const newBoards = boards.map(board => board.id == boardId ? updatedBoard : board);
                 setBoards(newBoards);
+                toast.success("Task removed.");
             }
-
 
         } catch (error) {
             console.log("Delete Error: ", error);
+            toast.error(`Oops! Server Issue :( \n Lemme fix it in a minute...`);
         }
 
     }

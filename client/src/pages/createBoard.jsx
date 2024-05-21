@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './css/create.css';
 import axios from '../apis';
 import { useNavigate } from 'react-router-dom';
-
+import toast from 'react-hot-toast';
 
 const CreateBoard = ({ boards, setBoards }) => {
 
@@ -24,13 +24,14 @@ const CreateBoard = ({ boards, setBoards }) => {
             if (response.data.success) {
                 const newBoards = [...boards,{ id, title, description }]
                 setBoards(newBoards);
-
+                toast.success("New Board Created");
                 navigate(`/boards`);
             }
-            else console.log(response.data.message);
+            else toast.error(response.data.message);
 
         } catch (error) {
             console.log(error);
+            toast.error(`Oops! Server Issue :( \n Lemme fix it in a minute...`)
         }
     };
 

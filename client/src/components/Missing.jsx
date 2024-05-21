@@ -7,7 +7,12 @@ const Missing = ({text,CreateBtn}) => {
     <div className='Parent Tasks'>
       <main className='Missing'>
         <h2>No {text} to display</h2>
-        <p>Well, that's disappointing.</p>
+        {
+          CreateBtn ? 
+            <p>Click the button below to create new {text}</p>
+            :
+            <p>Well, that's disappointing.</p>
+        }
         <p>
             Visit Our <Link to='/'>HomePage</Link>
         </p>

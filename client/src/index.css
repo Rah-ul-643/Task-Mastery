@@ -49,4 +49,6 @@ body {
 .Tasks, .Boards{
   /* background-image: linear-gradient(45deg, #000000, #ffffff); */
   background-image: url('https://images.pexels.com/photos/17485705/pexels-photo-17485705/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-visualises-an-artificial-neural-network-as-physical-objects-the-complex-structure-represents-a-network-of-information.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-repeat: no-repeat;
+  background-size: cover;
 }

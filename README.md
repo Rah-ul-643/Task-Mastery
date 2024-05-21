@@ -18,17 +18,3 @@ To get started with Task Mastery, follow these steps:
 
 Once the application is running, you can access it through your web browser. 
 
-## Contributing
-
-If you'd like to contribute to Task Mastery, please follow these guidelines:
-
-- Fork the repository.
-- Create a new branch: `git checkout -b feature/your-feature`
-- Make your changes and commit them: `git commit -m 'Add some feature'`
-- Push to the branch: `git push origin feature/your-feature`
-- Submit a pull request.
-
-- John Doe: UI/UX Design
-- Jane Smith: Testing and Feedback
-- Task Mastery logo designed by Freepik from Flaticon
-
